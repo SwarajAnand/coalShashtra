@@ -1,0 +1,17 @@
+.navbarClass{
+    background-color: rgb(41,89,186);
+    display:flex;
+    font-size:20px;
+    font-weight: 700;
+  }
+
+.navbarClassData{
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.navbarClassDataLink{
+    text-decoration: none;
+    color: white;
+}

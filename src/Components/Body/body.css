@@ -1,0 +1,35 @@
+:root{
+    background-color: white;
+}
+.marketDetailsData{
+    display: flex;
+    padding-left: 8%;
+    margin-left: 10px;
+}
+
+.marketDetailsDataInside{
+    font-size:18px;
+    text-decoration: none;
+    color: rgb(102,102,102);
+}
+
+.marketDetailsData{
+    border: 1px solid black;
+}
+
+.insideMarketData{
+    margin-left: 8%;
+}
+
+.belowNav{
+    display: flex;
+    justify-content: space-between;
+}
+.searchDataMain{
+    border: 2px solid black;
+    padding: 10px;
+}
+.searchData{
+    border:white;
+    font-size: 18px;
+}

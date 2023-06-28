@@ -1,0 +1,31 @@
+.skillDiv{
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+.cardMain{
+    display:flex;
+    font-size: 14px;
+    /* border-bottom: 2px solid black; */
+}
+
+.cardMainData{
+    margin-left: 10px;
+}
+
+.skill-main{
+    /* display: flex; */
+    border: 1px solid black;
+    width: 45%;
+    padding: 10px;
+    margin: 20px;
+    height: 600px;
+    overflow: scroll;
+}
+
+.leftBigCard{
+    border : 1px solid red;
+}
+.CardMainBody{
+    display:flex;
+    width: 100%;
+}
