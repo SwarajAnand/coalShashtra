@@ -17,3 +17,68 @@
     border: 1px solid black;
     width: 80%;
 }
+
+
+
+   .accordion {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .accordion.open .accordion-header {
+    background-color: #f0f0f0;
+  }
+  
+  .accordion-header {
+    padding: 10px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  .accordion-content {
+    padding: 10px;
+    display: none;
+  }
+  
+  .accordion.open .accordion-content {
+    display: block;
+  }
+  
+  .formBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .formBox1 {
+    flex: 1 1 23%;
+    margin-bottom: 10px;
+  }
+  
+  .formBoxTag {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .formBoxInput {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: skyblue;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: skyblue;
+  }
+  
+  /* Add any additional styles as needed */
+   

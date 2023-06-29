@@ -23,7 +23,8 @@
 }
 
 .leftBigCard{
-    border : 1px solid red;
+    /* border : 1px solid black; */
+    padding: 25px;
 }
 .CardMainBody{
     display:flex;

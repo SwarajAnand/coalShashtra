@@ -1,7 +1,7 @@
 export const productList = [
   {
     id: 1,
-    idTag: "Haldia Port",
+    idTag: "USAGUJ",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -15,7 +15,7 @@ export const productList = [
   },
   {
     id: 2,
-    idTag: "Haldia Port",
+    idTag: "USAGUJ",
     name: "RB2 | 52 FC +/- 1 - CFR",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -29,7 +29,7 @@ export const productList = [
   },
   {
     id: 3,
-    idTag: "Haldia Port",
+    idTag: "USAGUJ",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -43,7 +43,7 @@ export const productList = [
   },
   {
     id: 4,
-    idTag: "Haldia Port",
+    idTag: "ENNKAPT",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -57,7 +57,7 @@ export const productList = [
   },
   {
     id: 5,
-    idTag: "Haldia Port",
+    idTag: "ENNKAPT",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -71,7 +71,7 @@ export const productList = [
   },
   {
     id: 6,
-    idTag: "Haldia Port",
+    idTag: "HALDIPT",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -85,7 +85,7 @@ export const productList = [
   },
   {
     id: 7,
-    idTag: "Haldia Port",
+    idTag: "HALDIPT",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -99,7 +99,7 @@ export const productList = [
   },
   {
     id: 8,
-    idTag: "Haldia Port",
+    idTag: "HALDIPT",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -113,7 +113,7 @@ export const productList = [
   },
   {
     id: 9,
-    idTag: "Haldia Port",
+    idTag: "INDOGUJ",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -127,7 +127,7 @@ export const productList = [
   },
   {
     id: 10,
-    idTag: "Haldia Port",
+    idTag: "INDOGUJ",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -141,7 +141,7 @@ export const productList = [
   },
   {
     id: 11,
-    idTag: "Haldia Port",
+    idTag: "INDOGUJ",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -155,7 +155,7 @@ export const productList = [
   },
   {
     id: 12,
-    idTag: "Haldia Port",
+    idTag: "HAZMAG",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -169,7 +169,7 @@ export const productList = [
   },
   {
     id: 13,
-    idTag: "Haldia Port",
+    idTag: "HAZMAG",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",
@@ -183,7 +183,7 @@ export const productList = [
   },
   {
     id: 14,
-    idTag: "Haldia Port",
+    idTag: "HAZMAG",
     name: "ANTHRACITE PERU",
     icon: <i class="devicon-react-original colored"></i>,
     country: "Peru",

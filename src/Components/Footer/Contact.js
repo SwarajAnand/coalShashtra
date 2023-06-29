@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
-import { useState } from "react";
+
+const formFields = [
+  { name: "vessel", label: "Vessel's" },
+  { name: "quantity", label: "Quantity" },
+  { name: "offerPrice", label: "Offer Price" },
+  { name: "payment", label: "Payment Terms" },
+  { name: "advance", label: "Advance" },
+  { name: "balance", label: "Balance" },
+  { name: "noOfPymt", label: "No of Payment Days" },
+  { name: "liftingDay", label: "Lifting Days" },
+  { name: "expiry", label: "Expiry" },
+];
 
 function Contact() {
   const [user, setUser] = useState({
@@ -15,145 +26,86 @@ function Contact() {
     expiry: "",
   });
 
-  let name, value;
+  const [tableData, setTableData] = useState([]);
 
   const handleInput = (e) => {
-    console.log(e);
-    name = e.target.name;
-    value = e.target.value;
-
-    setUser({ ...user, [name]: value });
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    setTableData([...tableData, user]);
+    setUser({
+      vessel: "",
+      quantity: "",
+      offerPrice: "",
+      payment: "",
+      advance: "",
+      balance: "",
+      noOfPymt: "",
+      liftingDay: "",
+      expiry: "",
+    });
   };
+
+  const [isAccordionOpen, setAccordionOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setAccordionOpen(!isAccordionOpen);
+  };
+
   return (
     <div>
-      <form className="contact">
-        <div>Buy</div>
-        <div className="formBox">
-          <div className="formBox1">
-            <div className="formBoxTag">Vessel's</div>
-            <div>
-              <input
-                name="vessel"
-                className="formBoxInput"
-                type="text"
-                value={user.vessel}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Quantity</div>
-            <div>
-              <input
-                name="quantity"
-                className="formBoxInput"
-                type="text"
-                value={user.quantity}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Offer Price</div>
-            <div>
-              <input
-                name="offerPrice"
-                className="formBoxInput"
-                type="text"
-                value={user.offerPrice}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
+      <div className={`accordion ${isAccordionOpen ? "open" : ""}`}>
+        <div className="accordion-header" onClick={toggleAccordion}>
+          Buy
         </div>
+        <div className="accordion-content">
+          <form className="contact">
+            <div className="formBox">
+              {formFields.map((field) => (
+                <div className="formBox1" key={field.name}>
+                  <div className="formBoxTag">{field.label}</div>
+                  <div>
+                    <input
+                      name={field.name}
+                      className="formBoxInput"
+                      type="text"
+                      value={user[field.name]}
+                      onChange={handleInput}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
 
-        <div className="formBox">
-          <div className="formBox1">
-            <div className="formBoxTag">Payment Terms</div>
-            <div>
-              <input
-                name="payment"
-                className="formBoxInput"
-                type="text"
-                value={user.payment}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Advance</div>
-            <div>
-              <input
-                name="advance"
-                className="formBoxInput"
-                type="text"
-                value={user.advance}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Balance</div>
-            <div>
-              <input
-                name="balance"
-                className="formBoxInput"
-                type="text"
-                value={user.balance}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
+            <button className="submitButton" onClick={handleSubmit}>
+              Submit
+            </button>
+          </form>
         </div>
+      </div>
 
-        <div className="formBox">
-          <div className="formBox1">
-            <div className="formBoxTag">No of Payment Days</div>
-            <div>
-              <input
-                name="noOfPymt"
-                className="formBoxInput"
-                type="text"
-                value={user.noOfPymt}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Lifting Days </div>
-            <div>
-              <input
-                name="liftingDay"
-                className="formBoxInput"
-                type="text"
-                value={user.liftingDay}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-          <div className="formBox1">
-            <div className="formBoxTag">Expiry</div>
-            <div>
-              <input
-                name="expiry"
-                className="formBoxInput"
-                type="text"
-                value={user.expiry}
-                onChange={handleInput}
-              ></input>
-            </div>
-          </div>
-        </div>
-
-        <button className="submitButton" onClick={handleSubmit}>
-          Submit
-        </button>
-      </form>
+      {tableData.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              {formFields.map((field) => (
+                <th key={field.name}>{field.label}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((data, index) => (
+              <tr key={index}>
+                {formFields.map((field) => (
+                  <td key={field.name}>{data[field.name]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

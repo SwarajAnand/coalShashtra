@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Body from "./Components/Body/Body";
 import DataCards from "./Components/Cards/DataCards";
 import Contact from "./Components/Footer/Contact";
-// import Demo from "./Components/Demo";
+// import Mastere from "./Components/Body/Mastere";
 
 function App() {
   return (
