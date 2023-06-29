@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Body from "./Components/Body/Body";
 import DataCards from "./Components/Cards/DataCards";
+import Contact from "./Components/Footer/Contact";
 // import Demo from "./Components/Demo";
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
       </div>
       <div>
         <DataCards />
+      </div>
+      <div>
+        <Contact />
       </div>
     </div>
   );

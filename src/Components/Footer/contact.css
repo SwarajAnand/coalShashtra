@@ -1,0 +1,19 @@
+.formBox{
+    display: flex;
+}
+
+.formBox1{
+    padding: 15px;
+}
+
+.submitButton{
+    margin: 10px;
+    padding:10px;
+    width:25%;
+    font-size:20px;
+}
+
+.contact{
+    border: 1px solid black;
+    width: 80%;
+}
