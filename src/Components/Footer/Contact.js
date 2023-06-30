@@ -27,25 +27,50 @@ function Contact() {
   });
 
   const [tableData, setTableData] = useState([]);
+  const [errors, setErrors] = useState({});
 
   const handleInput = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+
+    // Validate the input field
+    const updatedErrors = { ...errors };
+    if (value.trim() === "") {
+      updatedErrors[name] = "This field is required.";
+    } else {
+      delete updatedErrors[name];
+    }
+    setErrors(updatedErrors);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTableData([...tableData, user]);
-    setUser({
-      vessel: "",
-      quantity: "",
-      offerPrice: "",
-      payment: "",
-      advance: "",
-      balance: "",
-      noOfPymt: "",
-      liftingDay: "",
-      expiry: "",
+
+    // Check for validation errors
+    const updatedErrors = {};
+    formFields.forEach((field) => {
+      if (user[field.name].trim() === "") {
+        updatedErrors[field.name] = "This field is required.";
+      }
     });
+
+    if (Object.keys(updatedErrors).length > 0) {
+      setErrors(updatedErrors);
+    } else {
+      setTableData([...tableData, user]);
+      setUser({
+        vessel: "",
+        quantity: "",
+        offerPrice: "",
+        payment: "",
+        advance: "",
+        balance: "",
+        noOfPymt: "",
+        liftingDay: "",
+        expiry: "",
+      });
+      setErrors({});
+    }
   };
 
   const [isAccordionOpen, setAccordionOpen] = useState(false);
@@ -74,6 +99,9 @@ function Contact() {
                       value={user[field.name]}
                       onChange={handleInput}
                     />
+                    {errors[field.name] && (
+                      <div className="error">{errors[field.name]}</div>
+                    )}
                   </div>
                 </div>
               ))}
