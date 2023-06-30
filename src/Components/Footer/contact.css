@@ -89,3 +89,22 @@
   .submitButton:hover{
     color: black;
   }
+
+  @media (max-width: 667px) {
+    .formBox {
+      flex-direction: column;
+    }
+  
+    .formBox1 {
+      flex: 1 1 100%;
+    }
+  
+    .submitButton {
+      width: 100%;
+    }
+  
+    .contact,
+    .accordion-header {
+      margin-left: 0;
+    }
+  }

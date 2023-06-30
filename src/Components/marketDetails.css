@@ -28,13 +28,11 @@
     line-height: 0.5;
     margin: 18px;
     padding: 25px;
-    /* color: red; */
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 .CardMainBody{
     display:flex;
-    /* width: 100%; */
 }
 
 .dataCardBox{
@@ -158,24 +156,10 @@
     color: rgba(0, 0, 0, 0.6);
 }
 .lowerSideCard{
-    /* padding: 15px;
-    border: 1px solid black;
-    align-items: center;
-    justify-content: center;
-    top: 50%; */
-
-    /* border: 5px solid; */
-    /* align-items: flex-end; */
     margin-left: 28%;
-    /* margin-right: 22%; */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
     padding: 10px;
 }
 .lowerSideCardBody{
-    /* border: 1px solid black; */
     padding: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.6);
     border-top: 1px solid rgba(0, 0, 0, 0.6);
@@ -195,3 +179,27 @@
 .underLine{
     border-bottom: 1px solid rgba(0, 0, 0, 0.6);
 }
+
+@media (max-width: 767px) {
+    .skill-main {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .leftBigCard {
+      margin: 0;
+    }
+  
+    .CardMainBody {
+      flex-direction: column;
+    }
+  
+    .marketData {
+      margin-left: 0;
+    }
+  
+    .lowerSideCard {
+      margin-left: 0;
+    }
+  }
+  
