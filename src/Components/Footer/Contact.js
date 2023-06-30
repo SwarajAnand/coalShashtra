@@ -58,7 +58,7 @@ function Contact() {
   };
 
   return (
-    <div>
+    <div className="mainContactPage">
       <div className={`accordion ${isAccordionOpen ? "open" : ""}`}>
         <div className="accordion-header" onClick={toggleAccordion}>
           Buy

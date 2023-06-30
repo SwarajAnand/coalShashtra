@@ -1,10 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import Body from "./Components/Body/Body";
-import DataCards from "./Components/Cards/DataCards";
 import Contact from "./Components/Footer/Contact";
-// import Mastere from "./Components/Body/Mastere";
+import MarketDetails from "./Components/MarketDetails";
 
 function App() {
   return (
@@ -12,12 +10,7 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <div>
-        <Body />
-      </div>
-      <div>
-        <DataCards />
-      </div>
+      <MarketDetails />
       <div>
         <Contact />
       </div>
