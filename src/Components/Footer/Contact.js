@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import "./contact.css";
 
 const formFields = [
@@ -13,65 +15,41 @@ const formFields = [
   { name: "expiry", label: "Expiry" },
 ];
 
+const validationSchema = Yup.object().shape({
+  vessel: Yup.string().required("Vessel is required"),
+  quantity: Yup.string().required("Quantity is required"),
+  offerPrice: Yup.string().required("Offer Price is required"),
+  payment: Yup.string().required("Payment Terms is required"),
+  advance: Yup.string().required("Advance is required"),
+  balance: Yup.string().required("Balance is required"),
+  noOfPymt: Yup.string().required("No of Payment Days is required"),
+  liftingDay: Yup.string().required("Lifting Days is required"),
+  expiry: Yup.string().required("Expiry is required"),
+});
+
 function Contact() {
-  const [user, setUser] = useState({
-    vessel: "",
-    quantity: "",
-    offerPrice: "",
-    payment: "",
-    advance: "",
-    balance: "",
-    noOfPymt: "",
-    liftingDay: "",
-    expiry: "",
-  });
-
   const [tableData, setTableData] = useState([]);
-  const [errors, setErrors] = useState({});
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-
-    // Validate the input field
-    const updatedErrors = { ...errors };
-    if (value.trim() === "") {
-      updatedErrors[name] = "This field is required.";
-    } else {
-      delete updatedErrors[name];
-    }
-    setErrors(updatedErrors);
+  const handleFormSubmit = (values, { resetForm }) => {
+    setTableData([...tableData, values]);
+    resetForm();
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Check for validation errors
-    const updatedErrors = {};
-    formFields.forEach((field) => {
-      if (user[field.name].trim() === "") {
-        updatedErrors[field.name] = "This field is required.";
-      }
-    });
-
-    if (Object.keys(updatedErrors).length > 0) {
-      setErrors(updatedErrors);
-    } else {
-      setTableData([...tableData, user]);
-      setUser({
-        vessel: "",
-        quantity: "",
-        offerPrice: "",
-        payment: "",
-        advance: "",
-        balance: "",
-        noOfPymt: "",
-        liftingDay: "",
-        expiry: "",
-      });
-      setErrors({});
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      vessel: "",
+      quantity: "",
+      offerPrice: "",
+      payment: "",
+      advance: "",
+      balance: "",
+      noOfPymt: "",
+      liftingDay: "",
+      expiry: "",
+    },
+    validationSchema,
+    onSubmit: handleFormSubmit,
+  });
 
   const [isAccordionOpen, setAccordionOpen] = useState(false);
 
@@ -86,7 +64,7 @@ function Contact() {
           Buy
         </div>
         <div className="accordion-content">
-          <form className="contact">
+          <form className="contact" onSubmit={formik.handleSubmit}>
             <div className="formBox">
               {formFields.map((field) => (
                 <div className="formBox1" key={field.name}>
@@ -96,18 +74,20 @@ function Contact() {
                       name={field.name}
                       className="formBoxInput"
                       type="text"
-                      value={user[field.name]}
-                      onChange={handleInput}
+                      value={formik.values[field.name]}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
-                    {errors[field.name] && (
-                      <div className="error">{errors[field.name]}</div>
-                    )}
+                    {formik.touched[field.name] &&
+                      formik.errors[field.name] && (
+                        <div className="error">{formik.errors[field.name]}</div>
+                      )}
                   </div>
                 </div>
               ))}
             </div>
 
-            <button className="submitButton" onClick={handleSubmit}>
+            <button className="submitButton" type="submit">
               Submit
             </button>
           </form>
